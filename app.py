@@ -31,27 +31,30 @@ app = Flask(__name__)
 # Add routing information for all other routes - create a function and return statement will have f-strings as reference to all other routes 
 # Create function welcome and add precipitation, stations, tobs, and temp routes into return statement 
 def welcome():
-    return(
-    '''
-    Welcome to the Climate Analysis API!
-    Available Routes:
-    /api/v1.0/precipitation
-    /api/v1.0/stations
-    /api/v1.0/tobs
-    /api/v1.0/temp/start/end
-    ''')
+    test = (f"Welcome to the Hawaii Climate Analysis API!<br/>"
+        f"Available Routes:<br/>"
+        f"/api/v1.0/precipitation<br/>"
+        f"/api/v1.0/stations<br/>"
+        f"/api/v1.0/tobs<br/>" 
+        f"/api/v1.0/temp/start/end")
+    return (test)
 
 # Create a new route for precipitation - make sure aligned to the left and convert dictionary into a json file
 @app.route("/api/v1.0/precipitation")
 
 # Create the precipitation function 
 def precipitation():
-   prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
-   precipitation = session.query(Measurement.date, Measurement.prcp).\
-    filter(Measurement.date >= prev_year).all()
-   precip = {date: prcp for date, prcp in precipitation}
-   return jsonify(precip)
+    prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    precipitation = session.query(Measurement.date, Measurement.prcp).\
+        filter(Measurement.date >= prev_year).all()
+    precip = {date: prcp for date, prcp in precipitation}
+    return jsonify(precip)
 
 
+    
+
+
+if __name__ == '__main__':
+    app.run()
 
 

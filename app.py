@@ -50,11 +50,47 @@ def precipitation():
     precip = {date: prcp for date, prcp in precipitation}
     return jsonify(precip)
 
+# Create a new route for stations 
+@app.route("/api/v1.0/stations")
 
+# Create the stations function 
+def stations():
+    results = session.query(Station.station).all()
+    stations = list(np.ravel(results))
+    return jsonify(stations=stations)
+
+# Create a new route for the stats 
+@app.route("/api/v1.0/temp/<start>")
+@app.route("/api/v1.0/temp/<start>/<end>")
+
+# Create the stats function 
+def stats():
+    sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), flafunc.max(Measurement.tobs)]
     
+    if not end:
+        results = session.query(*sel).\
+        filter(Measurement.date <= start).all()
+        temps = list(np.ravel(results))
+        return jsonify(temps)
 
+    results = session.query(*sel).\
+        filter(Measurement.date >= start).\
+        filter(Measurement.date <= end).all()
+    temps = list(np.ravel(results))
+    return jsonify(temps=temps)
 
+# Create a new route for tobs
+@app.route("/api/v1.0/tobs")
+
+# Create the tobs function 
+def temp_monthly():
+    prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    results = session.query(Measurement.tobs).\
+    filter(Measurement.station == 'USC00519281').\
+    filter(Measurement.date >= prev_year).all()
+    temps = list(np.ravel(results))
+    return jsonify(temps=temps)
+
+# End the flask call
 if __name__ == '__main__':
     app.run()
-
-

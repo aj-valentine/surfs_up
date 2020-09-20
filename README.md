@@ -2,7 +2,7 @@
 Analysis Using Jupyter Notebooks, Python, Pandas, SQLite, and SQLAlchemy
 
 ## Overview of the Surfs Up Weather Data Analysis :surfing_woman:
-This project was created for an investor about a surf and icecream shake shop. The analysis is about weather patterns by month for the island of Oahu - more specifically for the months of June and December. Throughout the analysis, we use Jupyter Notebooks and Python to summarize and manipulate data from an SQLite database called hawaii. In order to access this database, we use SQLAlchemy. 
+This project was created for an investor about a surf and icecream shop. The analysis details weather patterns by month for the island of Oahu - more specifically for the months of June and December. Throughout the analysis, I have used Jupyter Notebooks and Python to summarize and manipulate data from an SQLite database called hawaii. In order to access this database, SQLAlchemy was used. 
 
 Process of Analysis: create an engine to reflect into the SQLite database and convert the weather data into separate Pandas dataframes for June and December. Then statistical analysis is calculated for each month. This includes count, mean, std, min, 25% + 50% + 75% quartiles, and max for each dataframe. 
 

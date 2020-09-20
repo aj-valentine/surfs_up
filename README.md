@@ -13,10 +13,12 @@ Process of Analysis: create an engine to reflect into the SQLite database and co
 3. The max temperature recorded for both months is 85 degrees for June and 83 in December. This is also important data that proves Oahu has not only few low temperatures, but it is also not unbearably hot and doesn't reach the 90s or 100s. 
 
 June Weather Results: 
--- insert photo
+
+<img width="128" alt="June_Weather" src="https://user-images.githubusercontent.com/67871338/93692623-7d8a3e00-fac3-11ea-9ecb-159e5505d1b1.PNG">
 
 December Weather Results: 
--- insert photo
+
+<img width="114" alt="Dec_Weather" src="https://user-images.githubusercontent.com/67871338/93692618-719e7c00-fac3-11ea-8f7a-33734c17be36.PNG">
 
 ## Summary 
 
@@ -27,13 +29,17 @@ Overall, Oahu has an ideal climate year round. While looking at temperature data
 1. In order to get a full picture of the weather, it is important to look at precipitation as well as temperature. When looking at the additional queries run for the temperatures and precipitation, we can see that on average there is a lot more rain during December with the average at 0.22 and the max at 6.42 compared to June with the average at 0.14 and the max at 4.43. 
 
 June Temperatures + Precipitation:
--- insert photo 
+
+<img width="170" alt="June_Weather_withprcp" src="https://user-images.githubusercontent.com/67871338/93692625-7fec9800-fac3-11ea-9a00-2fda02261df9.PNG">
 
 December Temperatures + Precipitation: 
--- insert photo 
+
+<img width="179" alt="Dec_Weather_withprcp" src="https://user-images.githubusercontent.com/67871338/93692621-76fbc680-fac3-11ea-99a5-91d631bb4fed.PNG">
 
 2. In order to see true yearly temperature, and not just June and December, I ran a query for the last year (2017) for each month. As indicated by the screenshot below, the year round temperature does not vary significantly from June and December temperature. The average yearly temperature is 74 degrees, with the min at 58 degrees and max at 87 degrees. 
 
--- insert photo
+2017 Yearly Temperature: 
+
+<img width="113" alt="2017_Year" src="https://user-images.githubusercontent.com/67871338/93692638-af9ba000-fac3-11ea-8064-afe5e247d3fc.PNG">
 
 
